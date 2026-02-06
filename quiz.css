@@ -56,6 +56,7 @@ p.discpt {
 section.User-disply {
   display: flex;
   flex-direction: column;
+  position: relative;
   margin-block-start: 3rem;
   text-align: start;
 }
@@ -66,11 +67,19 @@ label {
   padding: 1rem;
 }
 
+section.User-disply img {
+  width: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateX(-50%);
+}
+
 input {
   width: 18.85rem;
   height: 3.7rem;
   border-radius: 5rem;
-  padding-left: 1.5rem;
+  padding-left: 3.5rem;
   background: #030f0f;
   border: 2px solid #ffffff;
   color: #ffffff;
@@ -84,7 +93,7 @@ input::placeholder {
 .start-btn {
   padding: 1rem 2.5rem;
   position: absolute;
-  bottom: 30%;
+  bottom: -120px;
   left: 50%;
   transform: translateX(-50%);
   background: #030f0f;
@@ -95,6 +104,7 @@ input::placeholder {
   font-size: 1rem;
   z-index: 1;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .start-btn::before {
