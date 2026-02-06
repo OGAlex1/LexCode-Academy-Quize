@@ -1,6 +1,7 @@
 //color varaible
 $white:#ffffff;
 $rich-orange:#ff8c42;
+$warm-orange:#ffb347;
 $dark-mode:#11120d;
 $green:#00df82;
 $Liquid-lava:#f56e0f;
@@ -48,6 +49,8 @@ button.mode-btn{
     margin-inline-end: 1rem;
     background-color: $dark-mode;
     border-radius: 2rem;
+    border-color: $white
+    ;
 }
 
 header{
@@ -85,16 +88,74 @@ section.User-disply{
 }
 label{
     font-size: 1.5rem;
+    color: $white;
+    padding: 1rem;
 }
 
 
 input{
-    width: 300px;
-    height: 50px;
+    width: 18.85rem;
+    height: 3.7rem;
 
     border-radius:5rem;
+    padding-left: 1.5rem;
+    background: $shade-dark;
+    border: 2px solid $white;
+    color: $white;
+    font-size: 1.5rem;
     
 }
 input::placeholder{
     font-size: 1.5rem;
+ }
+
+.start-btn {
+  padding: 1rem 2.5rem;
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background:$shade-dark;
+  color: $white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 1;
+  overflow: hidden;
+}
+
+
+// gradient border animation
+.start-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 1.1rem;
+  background: linear-gradient(
+    270deg,
+    $green,
+    $warm-orange,
+    $Liquid-lava
+  );
+  background-size: 400% 400%;
+  animation: borderFlow 10s linear infinite;
+  z-index: -1;
+}
+
+
+.start-btn::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: $shade-dark;
+  border-radius: 0.9rem;
+  z-index: -1;
+}
+
+
+
+@keyframes borderFlow {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
 }
