@@ -1,9 +1,11 @@
 //color varaible
 $white:#ffffff;
+$rich-orange:#ff8c42;
 $dark-mode:#11120d;
 $green:#00df82;
 $Liquid-lava:#f56e0f;
 $shade-dark:#030f0f;
+
 $cool-gray:#cbd2d9;
 
 
@@ -26,8 +28,10 @@ body{
     flex-direction: column;
    align-items: center;
    margin: o auto;
-
-   background-color: $cool-gray;
+background-image:url(image/back-img.jpg) ;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
    position: relative
 
 }
@@ -42,6 +46,8 @@ button.mode-btn{
     transform: translateY(-50%);
 
     margin-inline-end: 1rem;
+    background-color: $dark-mode;
+    border-radius: 2rem;
 }
 
 header{
@@ -49,19 +55,23 @@ header{
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: 2px solid red;
+   
 
     margin-block-start: 4rem;
 
 }
-h2{
+h1{
     width: 100%;
     text-align: center;
+   color: $white;
+   
 }
 p.discpt{
     width: 100%;
     margin-block-start: 1rem;
     line-height: 1.3rem;
+      color: $white;
+      font-weight: 600;
 }
 
 //user name input styling
@@ -69,5 +79,22 @@ p.discpt{
 section.User-disply{
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+   
+    margin-block-start: 3rem;
+    text-align: start;
+}
+label{
+    font-size: 1.5rem;
+}
+
+
+input{
+    width: 300px;
+    height: 50px;
+
+    border-radius:5rem;
+    
+}
+input::placeholder{
+    font-size: 1.5rem;
 }
