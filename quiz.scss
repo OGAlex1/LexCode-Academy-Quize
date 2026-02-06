@@ -1,0 +1,73 @@
+//color varaible
+$white:#ffffff;
+$dark-mode:#11120d;
+$green:#00df82;
+$Liquid-lava:#f56e0f;
+$shade-dark:#030f0f;
+$cool-gray:#cbd2d9;
+
+
+
+
+//fonts & weight varaible
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   
+}
+
+body{
+    height: 100vh;
+    width:100%;
+
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   margin: o auto;
+
+   background-color: $cool-gray;
+   position: relative
+
+}
+
+button.mode-btn{
+    width: auto;
+    padding: 0.7rem;
+
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    transform: translateY(-50%);
+
+    margin-inline-end: 1rem;
+}
+
+header{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid red;
+
+    margin-block-start: 4rem;
+
+}
+h2{
+    width: 100%;
+    text-align: center;
+}
+p.discpt{
+    width: 100%;
+    margin-block-start: 1rem;
+    line-height: 1.3rem;
+}
+
+//user name input styling
+
+section.User-disply{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
