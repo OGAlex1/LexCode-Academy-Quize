@@ -22,20 +22,11 @@ $cool-gray:#cbd2d9;
 }
 
 body{
-    height: 100vh;
+    height: 100vh; 
     width:100%;
-
-    display: flex;
-    flex-direction: column;
-   align-items: center;
-   margin: o auto;
-background-image:url(image/back-img.jpg) ;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-   position: relative
-
 }
+
+
 
 button.mode-btn{
     width: auto;
@@ -51,6 +42,21 @@ button.mode-btn{
     border-radius: 2rem;
     border-color: $white
     ;
+}
+
+.bg-wrapper{
+background-image:url(image/back-img.jpg) ;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100vh;
+width: 100%;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative
+   
 }
 
 header{
@@ -79,7 +85,7 @@ p.discpt{
 
 //user name input styling
 
-section.User-disply{
+section.user-disply{
     display: flex;
     flex-direction: column;
     position: relative;
@@ -92,10 +98,10 @@ section.User-disply{
 label{
     font-size: 1.5rem;
     color: $white;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
-section.User-disply img{
+section.user-disply img{
     width: 2rem;
     position: absolute;
     top: 50%;
@@ -170,3 +176,7 @@ input::placeholder{
   0%   { background-position: 0% 50%; }
   100% { background-position: 400% 50%; }
 }
+
+#hide-well, header{display: none;}
+
+//style quiz section

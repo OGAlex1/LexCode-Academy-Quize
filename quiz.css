@@ -7,15 +7,6 @@
 body {
   height: 100vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: o auto;
-  background-image: url(image/back-img.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
 }
 
 button.mode-btn {
@@ -29,6 +20,19 @@ button.mode-btn {
   background-color: #11120d;
   border-radius: 2rem;
   border-color: #ffffff;
+}
+
+.bg-wrapper {
+  background-image: url(image/back-img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 header {
@@ -53,7 +57,7 @@ p.discpt {
   font-weight: 600;
 }
 
-section.User-disply {
+section.user-disply {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -64,10 +68,10 @@ section.User-disply {
 label {
   font-size: 1.5rem;
   color: #ffffff;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
-section.User-disply img {
+section.user-disply img {
   width: 2rem;
   position: absolute;
   top: 50%;
@@ -134,4 +138,7 @@ input::placeholder {
   100% {
     background-position: 400% 50%;
   }
+}
+#hide-well, header {
+  display: none;
 }/*# sourceMappingURL=quiz.css.map */
