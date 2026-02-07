@@ -1,11 +1,14 @@
+//selecting element from HTML
 
-// DVD animation color change
-const circle = document.querySelector(".dvd-circle");
+const startBtn = document.getElementById("start-btn");
+const introPage = document.getElementById("introPage");
+const quizSection = document.getElementById("quizContainer");
+const darkMode = document.getElementById("modeToggle");
+const dvdCircle =document.querySelector(".dvd-cricle");
 
-function randomColor() {
-  return `hsl(${Math.random() * 360}, 80%, 55%)`;
-}
-
-circle.addEventListener("animationiteration", () => {
-  circle.style.backgroundColor = randomColor();
-});
+startBtn.addEventListener("click", () =>{
+    introPage.style.display = "none"; //this hide inroPage when start button is clicked
+    quizSection.style.display = "block"; // this shows quiz section when button is clicked
+    darkMode.style.display =  "block";
+    dvdCircle.style.display = "block";
+})

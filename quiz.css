@@ -139,16 +139,13 @@ input::placeholder {
     background-position: 400% 50%;
   }
 }
-.bg-wrapper {
-  display: none;
-}
-
 .quiz-container {
   background: #cbd2d9;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
+  display: none;
 }
 
 .time-stamp {
@@ -194,6 +191,7 @@ input::placeholder {
 
 .mode-btn {
   z-index: 10;
+  display: none;
 }
 
 .dvd-cricle {
@@ -213,6 +211,7 @@ input::placeholder {
   color: #ffffff;
   font-weight: 700;
   font-size: 3.1rem;
+  display: none;
   animation: moveX 10s linear infinite alternate, moveY 9s linear infinite alternate;
 }
 

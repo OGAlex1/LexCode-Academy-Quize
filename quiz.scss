@@ -178,7 +178,7 @@ input::placeholder{
   100% { background-position: 400% 50%; }
 }
 
-.bg-wrapper{display: none;}
+
 
 //style quiz container section
 .quiz-container{
@@ -187,7 +187,7 @@ input::placeholder{
     width: 100%;
     display: flex;
     flex-direction: column;
-    
+    display: none;
    
 }
 
@@ -245,7 +245,7 @@ input::placeholder{
 
 }
 // dark mode visibilty above all layer
-.mode-btn   { z-index: 10;}
+.mode-btn   { z-index: 10; display: none;}
 
 .dvd-cricle{
     position: fixed;
@@ -265,6 +265,7 @@ input::placeholder{
     color: $white;
     font-weight: 700;
     font-size: 3.1rem;
+    display: none;
 
     animation: 
     moveX 10s linear infinite alternate, 
