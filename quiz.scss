@@ -105,14 +105,14 @@ label{
 section.user-disply img{
     width: 2rem;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left:2rem;
     transform: translateX(-50%);
 }
 
 input{
     width: 18.85rem;
-    height: 3.7rem;
+    height: 3.9rem;
 
     border-radius:5rem;
     padding-left: 3.5rem;
@@ -318,6 +318,7 @@ img{width: 100%;}
 
 .quiz-answers{
     width: 90%;
+    height: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -325,5 +326,9 @@ img{width: 100%;}
     text-align: start;
 
     
-   margin: 2rem auto;
+   margin: 2.5rem auto;
+  
 }
+
+
+
