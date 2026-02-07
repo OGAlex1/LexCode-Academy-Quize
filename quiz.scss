@@ -185,13 +185,17 @@ input::placeholder{
     background: $cool-gray;
     height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+   
 }
 
 .time-stamp{
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
+   
 
     border-bottom: 1px solid $shade-dark;
     padding: 2.5rem;
@@ -243,6 +247,42 @@ input::placeholder{
 // dark mode visibilty above all layer
 .mode-btn   { z-index: 10;}
 
+.dvd-cricle{
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+   background-color: $shade-dark;
+    z-index: 10;
+    border-radius: 50%;
+    text-align: center;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.2;
+    color: $white;
+    font-weight: 700;
+    font-size: 3.1rem;
+
+    animation: 
+    moveX 10s linear infinite alternate, 
+    moveY 9s linear infinite alternate;
+}
+
+img{width: 100%;}
+
+// animation trigger
+@keyframes moveX{
+    from {left: 0;}
+    to {left: calc(100vw - 0.875rem);}
+}
+
+@keyframes moveY{
+    from{right: 0;}
+    to{top: calc(100vh - 0.875rem);}
+}
 
 // question page
 .quiz-question{
@@ -272,4 +312,17 @@ input::placeholder{
 .question{
    display: flex;
    flex-direction: column;
+}
+
+
+.quiz-answers{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: $green 2px solid;
+    text-align: start;
+
+    
+   margin: 2rem auto;
 }
