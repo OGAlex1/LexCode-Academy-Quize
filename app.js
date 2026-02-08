@@ -14,8 +14,7 @@ startBtn.addEventListener("click", () =>{
 })
 
 //When answer is checked change back-color and font-color
-const answer = document.getElementById("question");
-get
+
 
 // All quiz data 50 question
 const question = [

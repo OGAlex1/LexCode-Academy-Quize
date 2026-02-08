@@ -148,11 +148,19 @@ input::placeholder {
   display: none;
 }
 
+section#quizLayer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
 .time-stamp {
   position: relative;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #030f0f;
+  width: 100%;
   padding: 2.5rem;
   background: #2b2b2b;
 }
@@ -168,25 +176,28 @@ input::placeholder {
   font-size: 1.2rem;
 }
 
-#totalTimer {
+p#totalTimer {
   position: absolute;
   left: 50%;
   top: 1rem;
   transform: translateX(-50%);
   font-weight: 700;
+  font-size: 1rem;
   color: #ffffff;
 }
 
-#timer {
+p#timer {
   display: flex;
   position: absolute;
   top: 5.5rem;
   right: -1rem;
   transform: translateX(-50%);
   border: 4px solid #00df82;
-  padding: 0.7rem 0.7rem;
+  height: 3.3rem;
+  width: 3.3rem;
   border-radius: 100%;
   background-color: #030f0f;
+  font-size: 1.1rem;
 }
 
 .mode-btn {
@@ -236,43 +247,41 @@ img {
   }
 }
 .quiz-question {
+  width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   margin: 0 auto;
-  width: 90%;
-  margin-block-start: 3.5rem;
+  margin-block-start: 5rem;
 }
 
-.quiz-question h2 {
-  color: #030f0f;
-  font-weight: 600;
-  white-space: wrap;
-}
-
-.quiz-answers {
+h2.question {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.question {
-  display: flex;
-  flex-direction: column;
-}
-
-.quiz-answers {
-  width: 90%;
-  height: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: #00df82 2px solid;
+.answers {
+  width: 100%;
+  margin-block-start: 2rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0.2rem;
   text-align: start;
-  margin: 2.5rem auto;
 }
 
-#question.active {
+.answer {
+  display: flex;
+  align-items: start;
+  padding: 0.6rem;
+  border: 2px solid #00df82;
+  background: #2b2b2b;
+}
+
+button.answer {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+#answers.active {
   color: #ffffff;
   background-color: #00df82;
   border: 2px solid rgb(0, 62, 0);
