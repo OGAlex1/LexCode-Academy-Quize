@@ -50,15 +50,16 @@ background-image:url(image/back-img.jpg) ;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-height: 100vh;
+min-height: 100%;
 width: 100%;
 
 display: flex;
 flex-direction: column;
 align-items: center;
+
 position: relative
    
-}
+} 
 
 header{
     width: 90%;
@@ -92,8 +93,9 @@ section.user-disply{
     position: relative;
     
    
-    margin-block-start: 3rem;
+    margin-block-start: 5rem;
     text-align: start;
+  
 
 }
 label{
@@ -112,7 +114,7 @@ section.user-disply img{
 
 input{
     width: 18.85rem;
-    height: 3.9rem;
+    height: 3.8rem;
 
     border-radius:5rem;
     padding-left: 3.5rem;
@@ -330,5 +332,10 @@ img{width: 100%;}
   
 }
 
+#question.active{
+ color: $white;
+background-color: $green;
+border: 2px solid rgb(0, 62, 0);
+}
 
 

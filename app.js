@@ -1,7 +1,7 @@
 //selecting element from HTML
 
 const startBtn = document.getElementById("start-btn");
-const introPage = document.getElementById("introPage");
+const introPage = document.getElementById("wellPage");
 const quizSection = document.getElementById("quizContainer");
 const darkMode = document.getElementById("modeToggle");
 const dvdCircle =document.querySelector(".dvd-cricle");
@@ -12,3 +12,24 @@ startBtn.addEventListener("click", () =>{
     darkMode.style.display =  "block";
     dvdCircle.style.display = "block";
 })
+
+//When answer is checked change back-color and font-color
+const answer = document.getElementById("question");
+get
+
+// All quiz data 50 question
+const question = [
+{question:"Q1) What does HTML stand for?", correct:"", answers:{a:"", b:"", c:""
+
+}},
+
+{question:"", correct:"", answers:{a:"", b:"", c:""
+
+}},
+{question:"", correct:"", answers:{a:"", b:"", c:""
+
+}},
+{question:"", correct:"", answers:{a:"", b:"", c:""
+
+}},
+]
