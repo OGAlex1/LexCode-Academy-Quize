@@ -403,15 +403,16 @@ color: $white;
     align-items: center;
    
     min-height: 100%;
+    width: 90%;
 
 
 bottom: 0;
 }
 .buttons{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-  width: 100%;
+  width: 90%;
     
     position: absolute;
     bottom: 1rem;
@@ -423,12 +424,19 @@ bottom: 0;
     height: 3rem;
 
     border-radius: 1rem;
-    background: $dark-gray;
     color: $white;
     font-weight: 600;
     font-size: 1rem;
 
     text-transform: capitalize;
+}
+
+.endBtn{
+     background: red;
+}
+
+.nextBtn{
+    background: $green;
 }
 
 .quiz-container{
