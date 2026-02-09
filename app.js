@@ -460,3 +460,26 @@ function showQuestion() {
     // dide next button until users selecte an answer
     nextBtn.style.display = "none";
 }
+
+// answer selection
+function selectAnswer(selectedOption) {
+    const correct = quizData[currentQuestion].correct;
+    if (selectedOption === correct) {
+        score++;
+    }
+
+    // disable all buttons after selection
+    Array.from(answersEl.children).forEach(btn => {
+        btn.disabled = true;
+
+        // highlight correct and incorrect
+        if (btn.dataset.option === correct) {
+            btn.style.backgroundColor = "green";
+        } else if (btn.dataset.option === selectedOption) {
+            btn.style.backgroundColor = "red";
+        }
+    });
+
+    // show next button after user select answer
+    nextBtn.style.display = "block";
+}
