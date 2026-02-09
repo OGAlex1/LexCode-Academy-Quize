@@ -483,3 +483,28 @@ function selectAnswer(selectedOption) {
     // show next button after user select answer
     nextBtn.style.display = "block";
 }
+
+// next button click
+nextBtn.addEventListener("click", () => {
+    currentQuestion++;
+    if (currentQuestion < quizData.length) {
+        showQuestion();
+    } else {
+        endQuiz();
+    }
+});
+
+// End quiz
+function endQuiz() {
+    questionEl.textContent = `Quiz finished! You scored ${score} / ${quizData.length}`;
+    answersEl.innerHTML = "";
+    questionNumEl.textContent = "";
+    nextBtn.style.display = "none";
+}
+
+// Start quiz
+function startQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    showQuestion();
+}

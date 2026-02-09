@@ -371,6 +371,7 @@ p.code-name{
     grid-template-rows: 1fr 1fr 1fr;
     gap: 0.4rem;
     text-align: start;
+    cursor: pointer;
 }
 
 .answer{
@@ -394,6 +395,7 @@ background-color: $green;
 cursor: pointer;
 border: 2px solid rgb(0, 62, 0);
 color: $white;
+
 }
 
 //when answrs is checked users can't checked another
@@ -404,6 +406,10 @@ color: $white;
 
 .answer.wrong{
     background: rgb(234, 52, 52);
+    color: $white;
+}
+
+.answer.wrong{
     color: $white;
 }
 

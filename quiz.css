@@ -316,6 +316,7 @@ p.code-name {
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0.4rem;
   text-align: start;
+  cursor: pointer;
 }
 
 .answer {
@@ -348,6 +349,10 @@ button.answer {
 
 .answer.wrong {
   background: rgb(234, 52, 52);
+  color: #ffffff;
+}
+
+.answer.wrong {
   color: #ffffff;
 }
 
