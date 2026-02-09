@@ -172,10 +172,32 @@ section#quizLayer {
 
 .progress {
   display: flex;
-  gap: 1rem;
+  gap: 1.6rem;
   position: absolute;
   left: 1.5rem;
   margin-block-start: 1rem;
+  width: 90%;
+}
+
+p#totalQuiz {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 0.7rem;
+  background: #030f0f;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+}
+
+p#totalTimer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: #f57300;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  color: #030f0f;
 }
 
 .mode-btn {
@@ -224,8 +246,62 @@ img {
     top: calc(100vh - 0.875rem);
   }
 }
-.answers {
+.quiz-question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.questionBox {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  background: #ffb347;
+  position: relative;
+  padding: 1rem 1.2rem;
+  border-radius: 1.2rem;
+}
+
+p#timer {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f57300;
+  padding: 1rem;
+  border-radius: 100%;
+  border: 7px solid #2b2b2b;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+h2.questionNum {
+  margin-block-start: 2rem;
+  display: flex;
+  color: #2b2b2b;
+  text-transform: capitalize;
+}
+
+p.code-name {
+  color: #2b2b2b;
+  font-weight: 100;
+  border-bottom: 0.05rem solid #2b2b2b;
   width: 100%;
+  padding-block-end: 1rem;
+}
+
+.question {
+  display: flex;
+  align-items: start;
+  text-align: start;
+}
+
+.answers {
+  width: 90%;
   margin-block-start: 2rem;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -247,9 +323,19 @@ button.answer {
   font-size: 1.2rem;
 }
 
-#answers.active {
+.answer.active {
   color: #ffffff;
   background-color: #00df82;
+  cursor: pointer;
   border: 2px solid rgb(0, 62, 0);
   color: #ffffff;
+}
+
+.answers.locked {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.answer.wrong {
+  background: rgb(234, 52, 52);
 }/*# sourceMappingURL=quiz.css.map */

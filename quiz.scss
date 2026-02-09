@@ -221,13 +221,36 @@ section#quizLayer{
 
 .progress{
     display: flex;
-    gap: 1rem;
+    gap: 1.6rem;
     position: absolute;
     left: 1.5rem;
     margin-block-start: 1rem;
+    width: 90%;
     
 }
+p#totalQuiz{
+    color: $white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 0.7rem;
 
+    background: $shade-dark;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+}
+
+p#totalTimer{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: $Liquid-lava;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+
+    color: $shade-dark;
+    
+}
 
 
 // dark mode visibilty above all layer
@@ -271,10 +294,68 @@ img{width: 100%;}
     to{top: calc(100vh - 0.875rem);}
 }
 
+.quiz-question{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.questionBox{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+
+    background:$warm-orange;
+    position: relative;
+    padding: 1rem 1.2rem;
+    border-radius: 1.2rem;
+}
+
+p#timer{
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: $Liquid-lava;
+    padding: 1rem;
+    border-radius: 100%;
+    border: 7px solid $quiz-header ;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: $white;
+}
+
+h2.questionNum{
+    margin-block-start: 2rem;
+    display: flex;
+    color: $dark-gray;
+    text-transform: capitalize;
+
+}
+
+p.code-name{
+    color: $dark-gray;
+    font-weight: 100;
+    border-bottom: 0.05rem solid $dark-gray;
+    width: 100%;
+    padding-block-end: 1rem;
+}
+
+.question{
+    display: flex;
+    align-items: start;
+    text-align: start;
+}
+
 
 
 .answers{
-    width: 100%;
+    width: 90%;
     margin-block-start: 2rem;
 
     display: grid;
@@ -297,10 +378,21 @@ button.answer{
     font-size: 1.2rem;
 }
 
-#answers.active{
+.answer.active{
  color: $white;
 background-color: $green;
+cursor: pointer;
 border: 2px solid rgb(0, 62, 0);
 color: $white;
 }
 
+//when answrs is checked users can't checked another
+.answers.locked{
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+.answer.wrong{
+    background: rgb(234, 52, 52);
+    color: $white';
+}

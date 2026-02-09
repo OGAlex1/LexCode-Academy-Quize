@@ -14,6 +14,21 @@ startBtn.addEventListener("click", () =>{
 })
 
 //When answer is checked change back-color and font-color
+document.addEventListener("DOMContentLoaded", () => {
+  const answers = document.querySelectorAll(".answer");
+  let isLocked = false;
+
+  answers.forEach(answer => {
+    answer.addEventListener("click", () => {
+      if (isLocked) return;
+
+      answer.classList.add("active");
+
+      answers.forEach(a => a.classList.add("locked"));
+      isLocked = true;
+    });
+  });
+});
 
 
 // All quiz data 50 question
