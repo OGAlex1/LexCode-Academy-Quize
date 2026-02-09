@@ -317,9 +317,9 @@ img{width: 100%;}
     border-radius: 1.2rem;
 }
 
-p#timer{
+.twrapper{
     position: absolute;
-    top: -2rem;
+    top: -2.5rem;
     left: 50%;
     transform: translateX(-50%);
     
@@ -333,10 +333,15 @@ p#timer{
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
-    border: 7px solid $quiz-header ;
-    font-weight: 700;
+    border: 8px solid $quiz-header ;
+    font-weight: bold;
     font-size: 1.2rem;
     color: $white;
+    box-sizing: border-box;
+}
+
+.twrapper.active{
+    border-color: $white;
 }
 
 h2.questionNum{
@@ -369,7 +374,7 @@ p.code-name{
 
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 0.4rem;
+    gap: 0.5rem;
     text-align: start;
     cursor: pointer;
 }
@@ -378,7 +383,7 @@ p.code-name{
     display: flex;
     align-items: start;
     
-    padding: 0.6rem;
+    padding: 0.7rem;
     border: 2px solid $darrk-green;
     background: transparent;
     border-radius: 0.5rem;
@@ -404,13 +409,17 @@ color: $white;
     opacity: 0.9;
 }
 
-.answer.wrong{
-    background: rgb(234, 52, 52);
-    color: $white;
-}
+
 
 .answer.wrong{
     color: $white;
+    background-color:rgb(246, 29, 29) ;
+}
+
+.answer.correct{
+    background: $darrk-green;
+    color: white;
+    font-weight: 1.2rem;
 }
 
 .next-page{
@@ -453,10 +462,10 @@ bottom: 0;
 }
 
 .nextBtn{
-    background: $green;
+    background: $darrk-green;
 }
 
 .quiz-container{
-      border: 2px solid red;
+      
       position: relative; 
 }

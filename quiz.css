@@ -269,9 +269,9 @@ img {
   border-radius: 1.2rem;
 }
 
-p#timer {
+.twrapper {
   position: absolute;
-  top: -2rem;
+  top: -2.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -282,10 +282,15 @@ p#timer {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  border: 7px solid #2b2b2b;
-  font-weight: 700;
+  border: 8px solid #2b2b2b;
+  font-weight: bold;
   font-size: 1.2rem;
   color: #ffffff;
+  box-sizing: border-box;
+}
+
+.twrapper.active {
+  border-color: #ffffff;
 }
 
 h2.questionNum {
@@ -314,7 +319,7 @@ p.code-name {
   margin-block-start: 2rem;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 0.4rem;
+  gap: 0.5rem;
   text-align: start;
   cursor: pointer;
 }
@@ -322,7 +327,7 @@ p.code-name {
 .answer {
   display: flex;
   align-items: start;
-  padding: 0.6rem;
+  padding: 0.7rem;
   border: 2px solid rgb(3, 120, 3);
   background: transparent;
   border-radius: 0.5rem;
@@ -348,12 +353,14 @@ button.answer {
 }
 
 .answer.wrong {
-  background: rgb(234, 52, 52);
   color: #ffffff;
+  background-color: rgb(246, 29, 29);
 }
 
-.answer.wrong {
-  color: #ffffff;
+.answer.correct {
+  background: rgb(3, 120, 3);
+  color: white;
+  font-weight: 1.2rem;
 }
 
 .next-page {
@@ -390,10 +397,9 @@ button.answer {
 }
 
 .nextBtn {
-  background: #00df82;
+  background: rgb(3, 120, 3);
 }
 
 .quiz-container {
-  border: 2px solid red;
   position: relative;
 }/*# sourceMappingURL=quiz.css.map */

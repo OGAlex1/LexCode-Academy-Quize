@@ -6,6 +6,14 @@ const quizSection = document.getElementById("quizContainer");
 const darkMode = document.getElementById("modeToggle");
 const dvdCircle =document.querySelector(".dvd-cricle");
 
+// total quiz timer 8:20min
+let totalTimeLeft = 500
+let totalTimer;
+
+//timer per question
+let questionTimeLeft = 10;
+let questionTimer;
+
 startBtn.addEventListener("click", () =>{
     introPage.style.display = "none"; //this hide inroPage when start button is clicked
     quizSection.style.display = "block"; // this shows quiz section when button is clicked
@@ -13,6 +21,7 @@ startBtn.addEventListener("click", () =>{
     dvdCircle.style.display = "block";
 
     startQuiz();
+    startTotalTimer();
 })
 
 //When answer is checked change back-color and font-color
@@ -31,6 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function startTotalTimer() {
+    const totalTimerEl = document.getElementById("totalTimer");
+
+    let minutes = Math.floor(totalTimeLeft / 60);
+    let seconds = totalTimeLeft % 60;
+    totalTimerEl.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+    totalTimer = setInterval(() => {
+        totalTimeLeft--;
+        minutes = Math.floor(totalTimeLeft / 60);
+        seconds = totalTimeLeft % 60;
+        totalTimerEl.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+        if (totalTimeLeft <= 0) {
+            clearInterval(totalTimer);
+            clearInterval(questionTimer);
+            endQuiz(); // stop quiz automatically
+        }
+    }, 1000);
+}
 
 
 // All quiz data 50 question
@@ -474,9 +504,11 @@ function selectAnswer(selectedOption) {
 
         // highlight correct and incorrect
         if (btn.dataset.option === correct) {
-            btn.style.backgroundColor = "green";
+            //btn.style.backgroundColor = "green";
+            btn.classList.add("correct")
         } else if (btn.dataset.option === selectedOption) {
-            btn.style.backgroundColor = "red";
+            //btn.style.backgroundColor = "red";
+             btn.classList.add("wrong")
         }
     });
 
