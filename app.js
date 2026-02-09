@@ -24,6 +24,8 @@ startBtn.addEventListener("click", () =>{
     startTotalTimer();
 })
 
+
+
 //When answer is checked change back-color and font-color
 document.addEventListener("DOMContentLoaded", () => {
   const answers = document.querySelectorAll(".answer");
@@ -41,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+// funtion for total time of quiz
 function startTotalTimer() {
     const totalTimerEl = document.getElementById("totalTimer");
 
@@ -58,6 +62,43 @@ function startTotalTimer() {
             clearInterval(totalTimer);
             clearInterval(questionTimer);
             endQuiz(); // stop quiz automatically
+        }
+    }, 1000);
+}
+
+
+
+// per question for quiz timer
+ function startQuestionTimer() {
+    clearInterval(questionTimer);
+
+    questionTimeLeft = 10; // 🔥 RESET TIME
+    const timerEl = document.getElementById("timer");
+    timerEl.textContent = "10s";
+
+    questionTimer = setInterval(() => {
+        questionTimeLeft--;
+        timerEl.textContent = `${questionTimeLeft}s`;
+
+        if (questionTimeLeft <= 0) {
+            clearInterval(questionTimer);
+
+            const correct = quizData[currentQuestion].correct;
+
+            // mark as failed
+            Array.from(answersEl.children).forEach(btn => {
+                btn.disabled = true;
+                if (btn.dataset.option === correct) {
+                    btn.classList.add("correct");
+                } else {
+                    btn.classList.add("wrong");
+                }
+            });
+
+            // auto move to next question
+            setTimeout(() => {
+                goToNextQuestion();
+            }, 800);
         }
     }, 1000);
 }
@@ -489,10 +530,13 @@ function showQuestion() {
 
     // dide next button until users selecte an answer
     nextBtn.style.display = "none";
+    startQuestionTimer();
 }
 
 // answer selection
 function selectAnswer(selectedOption) {
+    clearInterval(questionTimer);
+
     const correct = quizData[currentQuestion].correct;
     if (selectedOption === correct) {
         score++;
@@ -512,19 +556,35 @@ function selectAnswer(selectedOption) {
         }
     });
 
+
     // show next button after user select answer
     nextBtn.style.display = "block";
 }
 
-// next button click
-nextBtn.addEventListener("click", () => {
+
+//go to next question after timer
+function goToNextQuestion() {
+    clearInterval(questionTimer);
+
     currentQuestion++;
+
     if (currentQuestion < quizData.length) {
         showQuestion();
     } else {
         endQuiz();
     }
-});
+}
+
+// // next button click
+// nextBtn.addEventListener("click", () => {
+//     clearInterval (questionTimer); 
+//     currentQuestion++;
+//     if (currentQuestion < quizData.length) {
+//         showQuestion();
+//     } else {
+//         endQuiz();
+//     }
+// });
 
 // End quiz
 function endQuiz() {
@@ -539,4 +599,5 @@ function startQuiz() {
     currentQuestion = 0;
     score = 0;
     showQuestion();
+    startQuestionTimer();
 }
