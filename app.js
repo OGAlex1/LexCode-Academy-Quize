@@ -50,13 +50,13 @@ function startTotalTimer() {
 
     let minutes = Math.floor(totalTimeLeft / 60);
     let seconds = totalTimeLeft % 60;
-    totalTimerEl.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+    totalTimerEl.textContent = `Total time: ${minutes}:${seconds.toString().padStart(2, "0")}`;
 
     totalTimer = setInterval(() => {
         totalTimeLeft--;
         minutes = Math.floor(totalTimeLeft / 60);
         seconds = totalTimeLeft % 60;
-        totalTimerEl.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+        totalTimerEl.textContent = `Total time: ${minutes}:${seconds.toString().padStart(2, "0")}`;
 
         if (totalTimeLeft <= 0) {
             clearInterval(totalTimer);
@@ -101,6 +101,16 @@ function startTotalTimer() {
             }, 800);
         }
     }, 1000);
+}
+
+// shuffle quiz randomly on every users
+function shuffleArray(array) {
+    // Fisher–Yates shuffle
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
 
@@ -518,6 +528,12 @@ function showQuestion() {
     questionNumEl.textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
     questionEl.textContent = currentQ.question;
 
+//shuffle answers
+const keys =
+Object.keys(currentQ.answers);
+shuffleArray(keys);
+
+
     // Create answer buttons 
     for (let key in currentQ.answers) {
         const btn = document.createElement("button");
@@ -575,16 +591,16 @@ function goToNextQuestion() {
     }
 }
 
-// // next button click
-// nextBtn.addEventListener("click", () => {
-//     clearInterval (questionTimer); 
-//     currentQuestion++;
-//     if (currentQuestion < quizData.length) {
-//         showQuestion();
-//     } else {
-//         endQuiz();
-//     }
-// });
+// next button click
+nextBtn.addEventListener("click", () => {
+    clearInterval (questionTimer); 
+    currentQuestion++;
+    if (currentQuestion < quizData.length) {
+        showQuestion();
+    } else {
+        endQuiz();
+    }
+});
 
 // End quiz
 function endQuiz() {
@@ -598,6 +614,10 @@ function endQuiz() {
 function startQuiz() {
     currentQuestion = 0;
     score = 0;
+
+    shuffleArray(quizData)
     showQuestion();
     startQuestionTimer();
+
+    
 }
