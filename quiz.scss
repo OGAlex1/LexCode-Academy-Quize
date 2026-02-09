@@ -221,7 +221,7 @@ section#quizLayer{
 
 .progress{
     display: flex;
-    gap: 1.6rem;
+    gap: 1.3rem;
     position: absolute;
     left: 1.5rem;
     margin-block-start: 1rem;
@@ -394,5 +394,5 @@ color: $white;
 
 .answer.wrong{
     background: rgb(234, 52, 52);
-    color: $white';
+    color: $white;
 }
