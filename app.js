@@ -11,6 +11,8 @@ startBtn.addEventListener("click", () =>{
     quizSection.style.display = "block"; // this shows quiz section when button is clicked
     darkMode.style.display =  "block";
     dvdCircle.style.display = "block";
+
+    startQuiz();
 })
 
 //When answer is checked change back-color and font-color
@@ -421,3 +423,40 @@ const quizData = [
     }
   }
 ];
+
+
+
+// Get DOM elements (declare once)
+const questionEl = document.getElementById("question");
+const answersEl = document.getElementById("answers");
+const nextBtn = document.getElementById("nextBtn");
+const questionNumEl = document.getElementById("questionNum");
+
+// Quiz state
+let currentQuestion = 0;
+let score = 0;
+
+// show question function
+function showQuestion() {
+    // cear previous answers
+    answersEl.innerHTML = "";
+
+    const currentQ = quizData[currentQuestion];
+
+    // show question number and text
+    questionNumEl.textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
+    questionEl.textContent = currentQ.question;
+
+    // Create answer buttons 
+    for (let key in currentQ.answers) {
+        const btn = document.createElement("button");
+        btn.textContent = currentQ.answers[key]; 
+        btn.dataset.option = key;
+        btn.classList.add("answer");
+        btn.addEventListener("click", () => selectAnswer(key));
+        answersEl.appendChild(btn);
+    }
+
+    // dide next button until users selecte an answer
+    nextBtn.style.display = "none";
+}
