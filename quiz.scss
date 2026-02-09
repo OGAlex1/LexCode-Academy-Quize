@@ -396,3 +396,42 @@ color: $white;
     background: rgb(234, 52, 52);
     color: $white;
 }
+
+.next-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    min-height: 100%;
+
+
+bottom: 0;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  width: 100%;
+    
+    position: absolute;
+    bottom: 1rem;
+
+}
+
+.endBtn, .nextBtn{
+    width: 6.5rem;
+    height: 3rem;
+
+    border-radius: 1rem;
+    background: $dark-gray;
+    color: $white;
+    font-weight: 600;
+    font-size: 1rem;
+
+    text-transform: capitalize;
+}
+
+.quiz-container{
+      border: 2px solid red;
+      position: relative; 
+}
