@@ -6,6 +6,29 @@ const quizSection = document.getElementById("quizContainer");
 const darkMode = document.getElementById("modeToggle");
 const dvdCircle =document.querySelector(".dvd-cricle");
 
+
+// dark mode toggle
+const toggleBtn = document.getElementById("modeToggle");
+
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.textContent = "☀️"; 
+}
+
+// toggle dark/light mode
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        toggleBtn.textContent = "☀️"; // sun icon
+    } else {
+        localStorage.setItems("theme", "light");
+        toggleBtn.textContent = "🌙"; // moon icon
+    }
+});
+
 // total quiz timer 8:20min
 let totalTimeLeft = 500
 let totalTimer;
@@ -511,6 +534,70 @@ const quizData = [
       b: "<tr>",
       c: "<th>"
     }
+  },
+
+   {
+    question: "What is the main purpose of semantic HTML",
+    correct: "b",
+    answers: {
+      a: "Browsers ignore all HTML errors",
+      b: "To give meaning and structure to content",
+      c: "To replace CSS styling"
+    }
+  },
+   {
+    question: "Why invalid HTML still works?",
+    correct: "b",
+    answers: {
+      a: "Browsers ignore all HTML errors",
+      b: "Browsers automatically correct HTML mistakes",
+      c: "HTML errors only affect JavaScript"
+    }
+  },
+   {
+    question: " Which issue is most likely caused by using non-unique IDs in HTML?",
+    correct: "b",
+    answers: {
+      a: " Page loading delay",
+      b: "Unexpected JavaScript behavior",
+      c: "CSS animations not working"
+    }
+  },
+   {
+    question: "Why does z-index sometimes fail to bring an element to the front? ",
+    correct: "b",
+    answers: {
+      a: "The element has no color",
+      b: "The element is inside a different stacking context",
+      c: "The element uses flexbox"
+    }
+  },
+   {
+    question: " Why percentages differ in CSS?",
+    correct: "b",
+    answers: {
+      a: " Percentages are calculated randomly",
+      b: " Different reference",
+      c: "Percentages only work in flex layouts"
+    }
+  },
+   {
+    question: " JS is single-threaded because?",
+    correct: "a",
+    answers: {
+      a: "One main thread",
+      b: " No async",
+      c: "Slow"
+    }
+  },
+   {
+    question: "Event loop does what?",
+    correct: "b",
+    answers: {
+      a: "Handle async",
+      b: "Speed up JS",
+      c: "Speed up JS"
+    }
   }
 ];
 
@@ -681,3 +768,4 @@ function startQuiz() {
 
     
 }
+

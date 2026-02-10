@@ -205,7 +205,7 @@ p#totalTimer {
 
 .mode-btn {
   z-index: 10;
-  display: none;
+  display: flex;
 }
 
 .dvd-cricle {
@@ -354,7 +354,7 @@ button.answer {
 
 .answer.wrong {
   color: #ffffff;
-  background-color: rgb(246, 29, 29);
+  background-color: rgba(255, 0, 0, 0.74);
 }
 
 .answer.correct {
@@ -597,5 +597,45 @@ p#resultText {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark .quiz-container,
+body.dark .scoreBoard {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+body.dark .time-stamp {
+  background-color: #f57300;
+}
+
+body.dark #totalTimer {
+  background-color: #ffffff;
+}
+
+body.dark .twrapper {
+  border-color: #f57300;
+  background-color: #11120d;
+}
+
+@media (min-width: 48rem) {
+  .time-stamp {
+    border-radius: 0;
+    height: 5rem;
+  }
+  .questionBox {
+    margin-block-start: 5rem;
+    width: 50%;
+  }
+  .answers {
+    width: 50%;
+  }
+  .buttons {
+    width: 50%;
   }
 }/*# sourceMappingURL=quiz.css.map */

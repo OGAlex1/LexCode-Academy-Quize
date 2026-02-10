@@ -257,7 +257,7 @@ p#totalTimer{
 
 
 // dark mode visibilty above all layer
-.mode-btn   { z-index: 10; display: none;}
+.mode-btn   { z-index: 10; display: flex;}
 
 .dvd-cricle{
     position: fixed;
@@ -414,7 +414,7 @@ color: $white;
 
 .answer.wrong{
     color: $white;
-    background-color:rgb(246, 29, 29) ;
+    background-color:rgba(255, 0, 0, 0.74) ;
 }
 
 .answer.correct{
@@ -644,7 +644,7 @@ p#resultText{
   overflow: hidden;
   z-index: 0;
  
-  //background-size: 600% 600%;
+
   transition: transform 0.2s ease;
   box-shadow: 0 5px 15px rgba(237, 237, 237, 0.473);
 
@@ -681,9 +681,54 @@ p#resultText{
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-// .bg-wrapper, .quiz-container{
-//     display: none;
-
-// }
 
 
+//dark mode
+
+body.dark {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark .quiz-container,
+body.dark .scoreBoard {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark .time-stamp{
+background-color: $Liquid-lava;
+}
+
+body.dark #totalTimer{
+    background-color: $white;
+}
+
+
+
+body.dark .twrapper{
+    border-color: $Liquid-lava;
+    background-color: $dark-mode;
+}
+
+
+
+@media (min-width:48rem){
+.time-stamp{
+
+border-radius:0;
+height: 5rem;
+}
+
+.questionBox{
+    margin-block-start: 5rem;
+    width: 50%;
+}
+
+.answers{
+width: 50%;
+}
+.buttons{
+    width: 50%;
+}
+}
