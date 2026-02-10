@@ -369,6 +369,7 @@ p.code-name{
     display: flex;
     align-items: center;
     text-align: center;
+    font-size: clamp(1.2rem, 3vh, 3rem);
 }
 
 
