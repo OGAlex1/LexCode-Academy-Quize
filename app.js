@@ -522,6 +522,7 @@ const answersEl = document.getElementById("answers");
 const nextBtn = document.getElementById("nextBtn");
 const questionNumEl = document.getElementById("questionNum");
 const endBtn = document.getElementById("endBtn");
+const totalQuiz = document.querySelector("#totalQuiz span");
 
 // Quiz state
 let username = "";
@@ -535,6 +536,7 @@ function showQuestion() {
     answersEl.innerHTML = "";
 
     const currentQ = quizData[currentQuestion];
+    totalQuiz.textContent = currentQuestion + 1;
 
     // show question number and text
     questionNumEl.textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;

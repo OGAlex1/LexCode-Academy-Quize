@@ -190,7 +190,7 @@ p#totalQuiz {
 }
 p#totalQuiz span {
   display: block;
-  margin-inline-start: 0.7rem;
+  padding: 0 0.4rem;
 }
 
 p#totalTimer {
