@@ -638,4 +638,8 @@ body.dark .twrapper {
   .buttons {
     width: 50%;
   }
+  .buttons {
+    position: absolute;
+    bottom: 40%;
+  }
 }/*# sourceMappingURL=quiz.css.map */
