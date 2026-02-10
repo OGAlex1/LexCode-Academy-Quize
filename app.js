@@ -663,7 +663,7 @@ endQuiz();
     else if (percentage >= 30) resultMessage = "Poor 😕";
     else resultMessage = "Very Poor ❌";
 
-    resultTextEl.textContent = `@${username} scored ${score} / ${quizData.length} — ${resultMessage}`;
+    resultTextEl.textContent = `Hey 👋 @${username} you scored ${score} / ${quizData.length} — ${resultMessage}`;
 
     // restart button
     const restartBtn = document.getElementById("restartBtn");

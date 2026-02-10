@@ -605,11 +605,15 @@ h2#resultTitle{
 }
 
 p#resultText{
+   display: flex;
+   align-items: center;
+   text-align: center;
+
     margin-block-start: 0.6rem;
     font-size: 1.5rem;
     color: $white;
   word-break: break-word;
-  width: 200px;
+  width: 300px;
     animation: fadein 1s ease forwards;
     animation-delay: 7s;
     opacity: 0;
@@ -639,23 +643,24 @@ p#resultText{
   position: relative;
   overflow: hidden;
   z-index: 0;
-  background: linear-gradient(270deg, $Liquid-lava, $green, $warm-orange, $li-blue);
-  background-size: 600% 600%;
+ 
+  //background-size: 600% 600%;
   transition: transform 0.2s ease;
   box-shadow: 0 5px 15px rgba(237, 237, 237, 0.473);
 
-  animation: fadein 1s ease forwards;
+  animation:  fadein 1s ease forwards;
    animation-delay: 7s;
    opacity: 0;
 }
 
 
-.animated-btn::before {
+.animated-btn::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: 1rem;
-  
+   background: linear-gradient(270deg, $Liquid-lava, $green, $warm-orange, $li-blue);
+   background-size: 600% 600%;
   z-index: -1;
   filter: blur(10px);
   animation: gradientMove 5s linear infinite;
@@ -663,7 +668,7 @@ p#resultText{
 
 .animated-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.299);
 }
 
 .animated-btn:active {
