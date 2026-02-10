@@ -8,6 +8,7 @@ $darrk-green: rgb(3, 120, 3);
 $Liquid-lava:#f57300;
 $shade-dark:#030f0f;
 $li-blue:#38bdf8;
+$dark-header:#1d124e;
 
 $cool-gray:#cbd2d9;
 $dark-gray:#2b2b2b;
@@ -16,7 +17,8 @@ $quiz-header:#2b2b2b;
 
 
 
-//fonts & weight varaible
+//fonts 
+$f-family: 'Poppins', sans-serif;
 
 *{
     padding: 0;
@@ -28,6 +30,8 @@ $quiz-header:#2b2b2b;
 body{
     height: 100vh; 
     width:100%;
+    font-family: $f-family;
+    font-weight: normal;
 }
 
 
@@ -363,8 +367,8 @@ p.code-name{
 
 .question{
     display: flex;
-    align-items: start;
-    text-align: start;
+    align-items: center;
+    text-align: center;
 }
 
 
@@ -710,7 +714,17 @@ body.dark .twrapper{
     border-color: $Liquid-lava;
     background-color: $dark-mode;
 }
+ body.dark .questionBox{
+    background-color: $dark-header;
+    color: $white;
+ }
+ body.dark h2 {
+ color: $white;
+ }
+ body.dark p.code-name{
+    color: $cool-gray;
 
+ }
 
 
 @media (min-width:48rem){
@@ -735,7 +749,7 @@ width: 50%;
 .buttons{
     position: static;
    margin-block-start: 2.5rem;
-    
+  
 }
 .bg-wrapper{
 display:flex;

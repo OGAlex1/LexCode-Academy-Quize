@@ -7,6 +7,8 @@
 body {
   height: 100vh;
   width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
 }
 
 button.mode-btn {
@@ -311,8 +313,8 @@ p.code-name {
 
 .question {
   display: flex;
-  align-items: start;
-  text-align: start;
+  align-items: center;
+  text-align: center;
 }
 
 .answers {
@@ -622,6 +624,19 @@ body.dark #totalTimer {
 body.dark .twrapper {
   border-color: #f57300;
   background-color: #11120d;
+}
+
+body.dark .questionBox {
+  background-color: #1d124e;
+  color: #ffffff;
+}
+
+body.dark h2 {
+  color: #ffffff;
+}
+
+body.dark p.code-name {
+  color: #cbd2d9;
 }
 
 @media (min-width: 48rem) {
