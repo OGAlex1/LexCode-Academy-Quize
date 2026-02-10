@@ -20,6 +20,7 @@ button.mode-btn {
   background-color: #11120d;
   border-radius: 2rem;
   border-color: #ffffff;
+  display: none;
 }
 
 .bg-wrapper {
@@ -62,7 +63,7 @@ section.user-disply {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-block-start: 5rem;
+  margin-block-start: 2rem;
   text-align: start;
 }
 
@@ -98,7 +99,7 @@ input::placeholder {
 .start-btn {
   padding: 1rem 2.5rem;
   position: absolute;
-  bottom: -120px;
+  bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
   background: #030f0f;
@@ -641,5 +642,17 @@ body.dark .twrapper {
   .buttons {
     position: absolute;
     bottom: 40%;
+  }
+  .bg-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .introPage {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }/*# sourceMappingURL=quiz.css.map */

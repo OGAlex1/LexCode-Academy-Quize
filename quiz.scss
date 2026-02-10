@@ -44,8 +44,8 @@ button.mode-btn{
     margin-inline-end: 1rem;
     background-color: $dark-mode;
     border-radius: 2rem;
-    border-color: $white
-    ;
+    border-color: $white ;
+    display: none;
 }
 
 .bg-wrapper{
@@ -97,7 +97,7 @@ section.user-disply{
     position: relative;
     
    
-    margin-block-start: 5rem;
+    margin-block-start:2rem;
     text-align: start;
   
 
@@ -135,7 +135,7 @@ input::placeholder{
 .start-btn {
   padding: 1rem 2.5rem;
   position: absolute;
-  bottom: -120px;
+  bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
   background:$shade-dark;
@@ -735,5 +735,20 @@ width: 50%;
 .buttons{
     position: absolute;
     bottom: 40%;
+}
+.bg-wrapper{
+display:flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+
+
+}
+
+.introPage{
+    width: 70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 }
