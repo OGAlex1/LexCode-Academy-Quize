@@ -14,16 +14,25 @@ let totalTimer;
 let questionTimeLeft = 10;
 let questionTimer;
 
-startBtn.addEventListener("click", () =>{
-    introPage.style.display = "none"; //this hide inroPage when start button is clicked
-    quizSection.style.display = "block"; // this shows quiz section when button is clicked
-    darkMode.style.display =  "block";
+startBtn.addEventListener("click", () => {
+
+    const nameInput = document.getElementById("username").value.trim();
+
+    if (nameInput === "") {
+        alert("Please enter your name before starting 😊");
+        return;
+    }
+
+    username = nameInput; // save username
+
+    introPage.style.display = "none";
+    quizSection.style.display = "block";
+    darkMode.style.display = "block";
     dvdCircle.style.display = "block";
 
     startQuiz();
     startTotalTimer();
-})
-
+});
 
 
 //When answer is checked change back-color and font-color
@@ -72,7 +81,7 @@ function startTotalTimer() {
  function startQuestionTimer() {
     clearInterval(questionTimer);
 
-    questionTimeLeft = 10; // 🔥 RESET TIME
+    questionTimeLeft = 10; 
     const timerEl = document.getElementById("timer");
     timerEl.textContent = "10s";
 
@@ -512,10 +521,13 @@ const questionEl = document.getElementById("question");
 const answersEl = document.getElementById("answers");
 const nextBtn = document.getElementById("nextBtn");
 const questionNumEl = document.getElementById("questionNum");
+const endBtn = document.getElementById("endBtn");
 
 // Quiz state
+let username = "";
 let currentQuestion = 0;
 let score = 0;
+
 
 // show question function
 function showQuestion() {
@@ -602,12 +614,58 @@ nextBtn.addEventListener("click", () => {
     }
 });
 
+endBtn.addEventListener("click", () => {
+endQuiz();
+});
+
 // End quiz
-function endQuiz() {
-    questionEl.textContent = `Quiz finished! You scored ${score} / ${quizData.length}`;
-    answersEl.innerHTML = "";
-    questionNumEl.textContent = "";
-    nextBtn.style.display = "none";
+ function endQuiz() {
+    clearInterval(totalTimer);
+    clearInterval(questionTimer);
+
+    // hide all other sections
+    quizSection.style.display = "none";
+    introPage.style.display = "none";
+    darkMode.style.display = "none";
+    dvdCircle.style.display = "none";
+
+    const resultsPage = document.getElementById("resultPage");
+
+    // apply styles via JS to center perfectly
+    resultsPage.style.position = "fixed";  
+    resultsPage.style.top = "0";
+    resultsPage.style.left = "0";
+    resultsPage.style.width = "100%";
+    resultsPage.style.height = "100vh";   
+    resultsPage.style.display = "flex";
+    resultsPage.style.flexDirection = "column";
+    resultsPage.style.justifyContent = "center";
+    resultsPage.style.alignItems = "center";
+    resultsPage.style.backgroundColor = "#1a1a1a"; 
+    resultsPage.style.zIndex = "9999"; 
+    resultsPage.classList.remove("hidden"); 
+
+    
+    const resultTitleEl = document.getElementById("resultTitle");
+    const resultTextEl = document.getElementById("resultText");
+
+    resultTitleEl.textContent = "Quiz Completed!";
+
+    const percentage = (score / quizData.length) * 100;
+    let resultMessage;
+
+    if (percentage >= 80) resultMessage = "Excellent 🎉";
+    else if (percentage >= 60) resultMessage = "Very Good 👍";
+    else if (percentage >= 50) resultMessage = "Good 🙂";
+    else if (percentage >= 40) resultMessage = "Fair 😐";
+    else if (percentage >= 30) resultMessage = "Poor 😕";
+    else resultMessage = "Very Poor ❌";
+
+    resultTextEl.textContent = `@${username} scored ${score} / ${quizData.length} — ${resultMessage}`;
+
+    // restart button
+    const restartBtn = document.getElementById("restartBtn");
+    restartBtn.addEventListener("click", () => location.reload());
 }
 
 // Start quiz
