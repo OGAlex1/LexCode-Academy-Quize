@@ -640,8 +640,8 @@ body.dark .twrapper {
     width: 50%;
   }
   .buttons {
-    position: absolute;
-    bottom: 40%;
+    position: static;
+    margin-block-start: 2.5rem;
   }
   .bg-wrapper {
     display: flex;
@@ -654,5 +654,8 @@ body.dark .twrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  p.discpt {
+    width: 70%;
   }
 }/*# sourceMappingURL=quiz.css.map */

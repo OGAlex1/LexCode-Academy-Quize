@@ -733,8 +733,9 @@ width: 50%;
 }
 
 .buttons{
-    position: absolute;
-    bottom: 40%;
+    position: static;
+   margin-block-start: 2.5rem;
+    
 }
 .bg-wrapper{
 display:flex;
@@ -751,4 +752,6 @@ text-align: center;
     justify-content: center;
     align-items: center;
 }
-}
+p.discpt{
+    width: 70%;
+}}
